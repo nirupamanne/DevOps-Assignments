@@ -32,3 +32,6 @@ total 16
   AWS puts it there automatically when I import it as a key pair and select it while launching the instance.
 
 When I connect, the server checks that my private key matches the public key in `authorized_keys`. Only then does it let me in. 
+
+
+### Nirupa Manne
