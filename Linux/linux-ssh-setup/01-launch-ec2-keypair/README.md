@@ -1,6 +1,6 @@
 ## Assignment — Linux and SSH Setup
 
-1. Launch an Amazon Linux 2023 EC2 instance in HYD region. Generate an SSH key pair. What is the difference between the two files created?
+**1. Launch an Amazon Linux 2023 EC2 instance in HYD region. Generate an SSH key pair. What is the difference between the two files created?**
 
 ### Enable the Hyderabad region 
 1. AWS console → click your account name → Account
