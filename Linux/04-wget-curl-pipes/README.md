@@ -17,7 +17,7 @@ https://raw.githubusercontent.com/daws-90s/notes/refs/heads/main/session-02.txt
    ```bash
    echo "https://raw.githubusercontent.com/daws-90s/notes/refs/heads/main/session-02.txt" | awk -F "/" '{print $NF}'
    ```
-5. Fetch the file, filter lines containing `ssh`, and count the matched lines using two pipes.
+6. Fetch the file, filter lines containing `ssh`, and count the matched lines using two pipes.
 ---
 
 ## Solutions
@@ -33,6 +33,7 @@ mkdir -p devops/wget-curl-pipes
 Navigate into the directory:
 ```bash
 cd devops/wget-curl-pipes
+
 ``
 Download the file and save it as `session-notes.txt`:
 
