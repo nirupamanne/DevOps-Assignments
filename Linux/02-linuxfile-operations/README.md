@@ -145,7 +145,7 @@ Verify the copied file contents:
 ```bash
 cat backup.txt
 ```
-![Copy and Move](copy%20and%20move.png)
+![Copy and Remove](copy%20and%20remove.png)
 
 ## Step 4: Move backup.txt to /tmp/
 
@@ -183,7 +183,7 @@ Expected output:
 ```text
 batch-90s
 ```
-![Copy and Move](copy%20and%20move.png)
+![Copy and Remove](copy%20and%20remove.png)
 
 ## Step 5: Delete the devops directory and everything inside it
 
@@ -217,7 +217,7 @@ rm -r devops/
 - `-r` – Recursively deletes directories and their contents.
 - `devops/` – Directory to delete.
   
-![Remove DevOps](remove%20devops.png)
+![Remove DevOps Files](remove%20devops%20files.png)
 
 Verify:
 
