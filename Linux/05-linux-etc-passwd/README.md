@@ -79,7 +79,6 @@ ec2-user
 ```bash
 awk -F: '$3 > 999 {print $1}' /etc/passwd
 ```
-![Show UID](<show UID.png>)
 
 **Explanation:**
 
@@ -88,6 +87,7 @@ awk -F: '$3 > 999 {print $1}' /etc/passwd
 - `$3` – Represents the third field (UID).
 - `> 999` – Checks whether the UID is greater than 999.
 - `{print $1}` – Displays the first field (username).
+![Show UID](<show UID.png>)
 
 **Expected Output:**
 
