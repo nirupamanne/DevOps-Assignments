@@ -34,6 +34,7 @@ projects
 devops/projects:
 batch-90s
 ```
+![Create Directory](create%20a%20directory.png)
 
 ## Step 2: Create notes.txt and write five lines
 
@@ -87,9 +88,6 @@ Linux supports automation.
 Linux supports shell scripting.
 Linux is used to manage servers.
 ```
-
-**Step 2 completed.**
-
 ## Step 3: Copy notes.txt and rename it to backup.txt
 
 Currently, you are inside:
@@ -187,12 +185,7 @@ Expected output:
 ```text
 batch-90s
 ```
-
-**Interview Question: What happens to files in /tmp when the server restarts?**
-
-**Answer:**
-
-`/tmp` is a temporary directory. Files stored there may be deleted when the server restarts, depending on the Linux system configuration. We should not store important permanent data in `/tmp`.
+![Copy and Move](copy%20and%20move.png)
 
 **Step 4 completed.**
 
@@ -227,7 +220,7 @@ rm -r devops/
 - `rm` – Removes files and directories.
 - `-r` – Recursively deletes directories and their contents.
 - `devops/` – Directory to delete.
-
+![DevOps](devops.png)
 Verify:
 
 ```bash
@@ -236,8 +229,6 @@ ls -l
 
 The `devops` directory should no longer exist.
 
-**Step 5 completed.**
-
 ## Step 6: List /var/log contents sorted by time
 
 Execute:
@@ -245,6 +236,7 @@ Execute:
 ```bash
 ls -lt /var/log/
 ```
+![Var Log Files](var%20log%20file.png)
 
 **Explanation:**
 
@@ -269,9 +261,10 @@ ls -latr /var/log/
 
 A DevOps engineer checks `/var/log` to monitor server activities, troubleshoot application issues, identify errors, and investigate system failures.
 
-**Step 6 completed.**
 
----
+**Interview Question: What happens to files in /tmp when the server restarts?**
+**Answer:**
+`/tmp` is a temporary directory. Files stored there may be deleted when the server restarts, depending on the Linux system configuration. We should not store important permanent data in `/tmp`.
 
 ### Linux Commands – Quick Reference
 
