@@ -72,4 +72,6 @@ uname -r
 Terminate the EC2 instance and delete the security group and key-par.
 ![Instance Termination](Instance%20termination.png)
 
-## Nirupa Manne
+
+
+### Nirupa Manne
