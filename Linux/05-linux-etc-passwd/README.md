@@ -39,6 +39,7 @@ Number of user accounts
 ```bash
 wc -l /etc/passwd
 ```
+![User Account Exist](<user account exist.png>)
 
 ### Step 2: Extract only the usernames
 
@@ -56,7 +57,7 @@ cut -d: -f1 /etc/passwd
 - `/etc/passwd` – User account information file.
 
 The first field in `/etc/passwd` contains the username.
-
+![Extract User Account Names](<extract-user account names.png>)
 **Expected Output:**
 
 ```text
@@ -76,7 +77,7 @@ ec2-user
 ```bash
 awk -F: '$3 > 999 {print $1}' /etc/passwd
 ```
-
+![Show UID](<show UID.png>)
 **Explanation:**
 
 - `awk` – Processes text and extracts specific fields.
@@ -107,7 +108,7 @@ grep "^ec2-user:" /etc/passwd
 - `^` – Matches the beginning of a line.
 - `ec2-user` – Searches for the specific username.
 - `:` – Ensures the username field matches exactly.
-
+![Find EC2 User](<find ec2 user.png>)
 **Expected Output Format:**
 
 ```text
@@ -141,7 +142,7 @@ grep "^ec2-user:" /etc/passwd | cut -d: -f6
 ```bash
 cut -d: -f7 /etc/passwd | sort -u
 ```
-
+![List Unique Shell](<List unique shell.png>)
 **Explanation:**
 
 - `cut -d:` – Uses `:` as the field separator.
