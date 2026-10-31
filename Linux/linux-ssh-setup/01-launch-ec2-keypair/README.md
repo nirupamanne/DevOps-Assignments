@@ -21,6 +21,9 @@ Step-2:
 4. Private key file format: .pem.
 5. Click Create key pair
 
+   ![Uploading image.png…](Linux_SSH_Key Pair.png)
+   
+
 Step-3: Create a new security group.
 Security Group name: linux-ssh-sg, Inbound type: SSH, Protocol: TCP, Port: 22, Source: Anywhere-IPv4 (0.0.0.0/0) – click on create it.
 
