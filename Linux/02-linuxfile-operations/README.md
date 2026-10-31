@@ -1,4 +1,4 @@
-## Assignment — Linux File Operations
+# Assignment — Linux File Operations
 
 1.	Create the following directory structure using a single command:   
 devops/
@@ -23,10 +23,6 @@ mkdir -p devops/projects/batch-90s
 - `mkdir` – Creates a directory.
 - `-p` – Creates parent directories automatically.
 - `devops/projects/batch-90s` – Creates the complete directory structure.
-
-# Linux Assignment – File Operations
-
-## Step 1: Verify the directory structure
 
 Execute:
 
@@ -282,7 +278,7 @@ A DevOps engineer checks `/var/log` to monitor server activities, troubleshoot a
 
 ---
 
-## Linux Commands – Quick Reference
+### Linux Commands – Quick Reference
 
 | Command | Purpose |
 |---|---|
