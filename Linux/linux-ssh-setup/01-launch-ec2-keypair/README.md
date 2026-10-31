@@ -26,9 +26,9 @@
 Security Group name: linux-ssh-sg, Inbound type: SSH, Protocol: TCP, Port: 22, Source: Anywhere-IPv4 (0.0.0.0/0) – click on create it.
 ![Security Group](Linux%20Security%20group.png)
 
-### Import the key and launch the instance
+### Import the key and Launch the EC2 Instance
 *Step-4:* Launch the EC2 instance and choose Name: Linux ,AMI: Amazon Linux 2023 AMI, Instance type: t3.micro, and select keypair: linux-ssh-key, security existing group: select the group(linux-ssh-sg) -> Click on Launch instance.
-[Linux Assignments.docx](Linux%20Assignments.docx)
+![EC2 Assignment Step 4](Step-4.png)
 
 
 ### What is the difference?
