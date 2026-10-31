@@ -23,8 +23,23 @@ cache-server  192.168.1.30 stopped
 ---
 
 ## Solutions
+# Assignment – Linux Text Processing
 
-### Step 1: Create the file
+## Step 1: Create a file with the given content
+
+First, create a directory for the assignment:
+
+```bash
+mkdir -p devops/text-processing
+```
+
+Navigate into the directory:
+
+```bash
+cd devops/text-processing
+```
+
+Create a file called `servers.txt` with the given content:
 
 ```bash
 cat > servers.txt <<EOF
@@ -36,69 +51,148 @@ cache-server  192.168.1.30 stopped
 EOF
 ```
 
-Verify:
+**Explanation:**
+
+- `cat` – Creates or displays file content.
+- `>` – Creates a file or overwrites existing content.
+- `EOF` – Marks the end of the input.
+
+Verify the file:
 
 ```bash
 cat servers.txt
 ```
 
-### 1. Show only running servers
+**Expected Output:**
 
-```bash
-grep 'running$' servers.txt
+```text
+web-server-01 192.168.1.10 running
+web-server-02 192.168.1.11 stopped
+db-server-01  192.168.1.20 running
+db-server-02  192.168.1.21 running
+cache-server  192.168.1.30 stopped
 ```
 
-**Explanation:** `grep` searches for matching text. Here, it displays only lines ending with `running`.
+## Step 2: Show only lines where the server is running
 
-### 2. Show servers that are NOT running
-
-```bash
-grep -v 'running$' servers.txt
-```
-
-**Explanation:** `-v` reverses the search and displays lines that do not match `running`.
-
-### 3. Count running servers
+**Command:**
 
 ```bash
-grep -c 'running$' servers.txt
+grep "running" servers.txt
 ```
 
-**Explanation:** `-c` counts the matching lines.
+**Explanation:**
 
-**Output:**
+- `grep` – Searches for specific text in a file.
+- `"running"` – Searches for lines containing running.
+- `servers.txt` – File to search.
+
+**Expected Output:**
+
+```text
+web-server-01 192.168.1.10 running
+db-server-01  192.168.1.20 running
+db-server-02  192.168.1.21 running
+```
+
+## Step 3: Show only lines where the server is NOT running
+
+**Command:**
+
+```bash
+grep -v "running" servers.txt
+```
+
+**Explanation:**
+
+- `grep` – Searches for matching text.
+- `-v` – Displays lines that do not match.
+- `"running"` – Excludes lines containing running.
+
+**Expected Output:**
+
+```text
+web-server-02 192.168.1.11 stopped
+cache-server  192.168.1.30 stopped
+```
+
+## Step 4: Count how many servers are running
+
+**Command:**
+
+```bash
+grep -c "running" servers.txt
+```
+
+**Explanation:**
+
+- `grep` – Searches for specific text.
+- `-c` – Counts matching lines.
+- `"running"` – Searches for running status.
+
+**Expected Output:**
+
 ```text
 3
 ```
 
-### 4. Show the first 3 lines and last 2 lines
+## Step 5: Show the first 3 lines and last 2 lines
 
-First 3 lines:
+**Show the first 3 lines:**
 
 ```bash
 head -n 3 servers.txt
 ```
 
-Last 2 lines:
+**Explanation:**
+
+- `head` – Displays the beginning of a file.
+- `-n 3` – Displays the first three lines.
+
+**Expected Output:**
+
+```text
+web-server-01 192.168.1.10 running
+web-server-02 192.168.1.11 stopped
+db-server-01  192.168.1.20 running
+```
+
+**Show the last 2 lines:**
 
 ```bash
 tail -n 2 servers.txt
 ```
 
 **Explanation:**
-- `head` displays the beginning of a file.
-- `tail` displays the end of a file.
-- `-n` specifies the number of lines.
 
-### 5. Extract only IP addresses
+- `tail` – Displays the end of a file.
+- `-n 2` – Displays the last two lines.
+
+**Expected Output:**
+
+```text
+db-server-02  192.168.1.21 running
+cache-server  192.168.1.30 stopped
+```
+
+## Step 6: Extract only the IP addresses
+
+**Command:**
 
 ```bash
 awk '{print $2}' servers.txt
 ```
 
-**Explanation:** `$2` represents the second column, which contains IP addresses.
+**Explanation:**
 
-**Output:**
+- `awk` – Processes and extracts text from files.
+- `$1` – First column (server name).
+- `$2` – Second column (IP address).
+- `$3` – Third column (server status).
+- `print` – Displays the selected column.
+
+**Expected Output:**
+
 ```text
 192.168.1.10
 192.168.1.11
@@ -107,15 +201,21 @@ awk '{print $2}' servers.txt
 192.168.1.30
 ```
 
-### 6. Extract only server names
+## Step 7: Extract only the server names
+
+**Command:**
 
 ```bash
 awk '{print $1}' servers.txt
 ```
 
-**Explanation:** `$1` represents the first column, which contains server names.
+**Explanation:**
 
-**Output:**
+- `awk` – Processes text column by column.
+- `$1` – Extracts the first column containing server names.
+
+**Expected Output:**
+
 ```text
 web-server-01
 web-server-02
@@ -124,45 +224,40 @@ db-server-02
 cache-server
 ```
 
-### 7. Show only names of stopped servers in one command
+## Step 8: Show only the names of stopped servers in one command
+
+**Command:**
 
 ```bash
 awk '$3 == "stopped" {print $1}' servers.txt
 ```
 
 **Explanation:**
-- `$3` checks the third column (server status).
-- `== "stopped"` checks whether the status is stopped.
-- `print $1` displays only the server name.
 
-**Output:**
+- `awk` – Processes the file.
+- `$3` – Checks the third column (server status).
+- `==` – Checks whether the value matches.
+- `"stopped"` – Searches for stopped status.
+- `print $1` – Displays only the server name.
+
+**Expected Output:**
+
 ```text
 web-server-02
 cache-server
 ```
 
----
+## Linux Text Processing – Quick Reference
 
-## Commands Summary
-
-| Task | Command |
+| Command | Purpose |
 |---|---|
-| Running servers | `grep 'running$' servers.txt` |
-| Non-running servers | `grep -v 'running$' servers.txt` |
-| Count running servers | `grep -c 'running$' servers.txt` |
-| First 3 lines | `head -n 3 servers.txt` |
-| Last 2 lines | `tail -n 2 servers.txt` |
-| Extract IP addresses | `awk '{print $2}' servers.txt` |
-| Extract server names | `awk '{print $1}' servers.txt` |
-| Stopped server names | `awk '$3 == "stopped" {print $1}' servers.txt` |
+| `grep "running" servers.txt` | Shows running servers |
+| `grep -v "running" servers.txt` | Shows non-running servers |
+| `grep -c "running" servers.txt` | Counts running servers |
+| `head -n 3 servers.txt` | Shows first 3 lines |
+| `tail -n 2 servers.txt` | Shows last 2 lines |
+| `awk '{print $2}' servers.txt` | Extracts IP addresses |
+| `awk '{print $1}' servers.txt` | Extracts server names |
+| `awk '$3 == "stopped" {print $1}' servers.txt` | Shows stopped server names |
 
-## What I Learned
-
-1. How to create and read files in Linux.
-2. How to search and filter data using `grep`.
-3. How to count matching lines using `grep -c`.
-4. How to display specific lines using `head` and `tail`.
-5. How to extract columns using `awk`.
-6. How to filter data and extract server names in a single command.
-
-**Conclusion:** These Linux text-processing commands are useful in real-time DevOps projects for log analysis, server monitoring, and troubleshooting.
+**Assignment completed successfully.**
