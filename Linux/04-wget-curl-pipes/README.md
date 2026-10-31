@@ -57,6 +57,8 @@ Display the file content:
 ```bash
 cat session-notes.txt
 ```
+![Download File](<download file.png>)
+![Download Wget File](<download wget file.png>)
 
 ## Step 2: Fetch the file using curl and count the lines
 
@@ -78,7 +80,7 @@ curl -s https://raw.githubusercontent.com/daws-90s/notes/refs/heads/main/session
 
 The command displays the total number of lines in the file.
 
-**Note:** The file is fetched directly. It is not saved to disk.
+![Curl Count Lines](<curl count lines.png>)
 
 ## Step 3: Fetch the file and display only lines containing Linux
 
@@ -97,6 +99,7 @@ curl -s https://raw.githubusercontent.com/daws-90s/notes/refs/heads/main/session
 **Expected Output:**
 
 Only lines containing `Linux` will be displayed.
+![Fetch Display Line](<fetch display line.png>)
 
 ## Step 4: Extract the last field using awk
 
@@ -111,6 +114,7 @@ echo "https://raw.githubusercontent.com/daws-90s/notes/refs/heads/main/session-0
 ```text
 session-02.txt
 ```
+![Extract AWK](<extract awk.png>)
 
 **Explanation:**
 
@@ -147,10 +151,12 @@ curl -s https://raw.githubusercontent.com/daws-90s/notes/refs/heads/main/session
 1. `curl` fetches the file from the URL.
 2. `grep` filters lines containing `ssh`.
 3. `wc -l` counts the matching lines.
+![Fetch Two Pipes](<fetch_two pipes.png>)
 
 **Expected Output:**
 
 The command displays the number of matching lines.
+
 
 ## Linux wget, curl, and Pipes – Quick Reference
 
