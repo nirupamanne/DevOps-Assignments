@@ -73,7 +73,14 @@ Terminate the EC2 instance and delete the security group and key-par.
 ![Instance Termination](Instance%20termination.png)
 
 
-
+*What you have learned*
+Generated an SSH key pair.
+Used the private key (Linux-ssh-keypair) to connect.
+#Set secure permissions using chmod 400.
+chmod 400 Linux-ssh-keypair
+Connected to EC2 using its public IP.
+#ssh -i Linux-ssh-keypair ec2-user@16.112.221.255
+Verified the connection using hostname, whoami, and pwd
 
 
 ### Nirupa Manne ###
