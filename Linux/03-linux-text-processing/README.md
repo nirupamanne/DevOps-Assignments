@@ -32,15 +32,14 @@ First, create a directory for the assignment:
 ```bash
 mkdir -p devops/text-processing
 ```
-
 Navigate into the directory:
-
 ```bash
 cd devops/text-processing
 ```
-
 Create a file called `servers.txt` with the given content:
-
+```bash
+touch servers.txt
+```
 ```bash
 cat > servers.txt <<EOF
 web-server-01 192.168.1.10 running
@@ -62,7 +61,7 @@ Verify the file:
 ```bash
 cat servers.txt
 ```
-
+![Create Server File](<create a server file.png>)
 **Expected Output:**
 
 ```text
@@ -72,7 +71,6 @@ db-server-01  192.168.1.20 running
 db-server-02  192.168.1.21 running
 cache-server  192.168.1.30 stopped
 ```
-
 ## Step 2: Show only lines where the server is running
 
 **Command:**
@@ -80,12 +78,12 @@ cache-server  192.168.1.30 stopped
 ```bash
 grep "running" servers.txt
 ```
-
 **Explanation:**
 
 - `grep` – Searches for specific text in a file.
 - `"running"` – Searches for lines containing running.
-- `servers.txt` – File to search.
+- `servers.txt` – File to search. 
+![Line Servers](<line servers.png>)
 
 **Expected Output:**
 
@@ -108,6 +106,7 @@ grep -v "running" servers.txt
 - `grep` – Searches for matching text.
 - `-v` – Displays lines that do not match.
 - `"running"` – Excludes lines containing running.
+![Line Server Not Running](<Line server not running.png>)
 
 **Expected Output:**
 
@@ -123,7 +122,7 @@ cache-server  192.168.1.30 stopped
 ```bash
 grep -c "running" servers.txt
 ```
-
+![Line Server Not Running](<Line server not running.png>)
 **Explanation:**
 
 - `grep` – Searches for specific text.
@@ -246,6 +245,7 @@ awk '$3 == "stopped" {print $1}' servers.txt
 web-server-02
 cache-server
 ```
+![Linux File Operations](<linux file operations.png>)
 
 ## Linux Text Processing – Quick Reference
 
