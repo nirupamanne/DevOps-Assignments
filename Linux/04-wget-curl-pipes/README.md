@@ -25,9 +25,11 @@ https://raw.githubusercontent.com/daws-90s/notes/refs/heads/main/session-02.txt
 
 ## Step 1: Download the file using wget
 First, create a directory for the assignment:
+
 ```bash
 mkdir -p devops/wget-curl-pipes
 ```
+
 Navigate into the directory:
 ```bash
 cd devops/wget-curl-pipes
