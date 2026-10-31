@@ -3,36 +3,33 @@
 **1. Launch an Amazon Linux 2023 EC2 instance in HYD region. Generate an SSH key pair. What is the difference between the two files created?**
 
 ### Enable the Hyderabad region 
-
-1. AWS console → click your account name → Account
-2. Scroll to AWS Regions
-3. Find Asia Pacific (Hyderabad) ap-south-2 → Enable
-4. Status changes from Enabling to Enabled in a few minutes.
-
-### Generate the key pair (on my laptop)
-ssh-keygen -f daws-92s
-
-❯ ls -l
-total 16
--rw-------  1 sivajyothipamarthy  staff  444 Oct 24 20:12 daws-92s
--rw-r--r--  1 sivajyothipamarthy  staff  124 Oct 24 20:12 daws-92s.pub
-
-### Import the key and launch the instance
-1. Switch region to Asia Pacific (Hyderabad)
-2. EC2 → Network & Security → Key Pairs → Actions → Import key pair → paste `daws-92s.pub`
-3. Launch instance: Amazon Linux 2023, t3.micro, key pair `daws-92s`
-
+Step 1: Open AWS Console
+1. Open AWS Management Console.
+2. Log in to your AWS account.
+3. On the top-right corner, select the AWS Region.
+4. Select Asia Pacific (Hyderabad) – ap-south-2.
+5. Search for EC2 in the AWS search bar.
+6. Open EC2.
+7. Click Launch instance.
 ![Instance running in ap-south-2](Instance.png)
 
-- `daws-92s` → private key. It stays on my laptop and is never shared.
-  Permissions are `-rw-------` (only I can read it). I use it to log in:
-  `ssh -i daws-92s ec2-user@<public-ip>`
+### Generate the key pair (on my laptop)
+Step-2:
+1. Click Create new key pair.
+2. Key pair name: linux-assignment-key
+3. Key pair type: RSA.
+4. Private key file format: .pem.
+5. Click Create key pair
 
-- `daws-hyd.pub` → public key. It goes on the server, in
-  `~/.ssh/authorized_keys` of the user I log in as. It's safe to share.
-  AWS puts it there automatically when I import it as a key pair and select it while launching the instance.
+Step-3: Create a new security group.
+Security Group name: linux-ssh-sg, Inbound type: SSH, Protocol: TCP, Port: 22, Source: Anywhere-IPv4 (0.0.0.0/0) – click on create it.
 
-When I connect, the server checks that my private key matches the public key in `authorized_keys`. Only then does it let me in. 
+### Import the key and launch the instance
+Step-4:Launch the EC2 instance and choose Name: Linux ,AMI: Amazon Linux 2023 AMI, Instance type: t3.micro, and select keypair: linux-ssh-key, security existing group: select the group(linux-ssh-sg) -> Click on Launch instance.
 
+
+## What is the difference?
+- **Private key**: Used by you to prove your identity when connecting to the EC2 instance. Never share it.
+- **Public key**: Installed on the EC2 instance. SSH uses it to verify that you have the matching private key.
 
 ### Nirupa Manne
