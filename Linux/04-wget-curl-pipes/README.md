@@ -31,15 +31,17 @@ mkdir -p devops/wget-curl-pipes
 ```
 
 Navigate into the directory:
+
 ```bash
 cd devops/wget-curl-pipes
 
-``
+```
 Download the file and save it as `session-notes.txt`:
 
 ```bash
 wget -O session-notes.txt https://raw.githubusercontent.com/daws-90s/notes/refs/heads/main/session-02.txt
 ```
+
 **Explanation:**
 
 - `wget` – Downloads files from the internet.
