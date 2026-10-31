@@ -182,4 +182,5 @@ cut -d: -f7 /etc/passwd | sort -u
 | `cut -d: -f7 /etc/passwd` | Extracts login shells |
 | `sort -u` | Displays unique sorted values |
 
-## Assignment Completed
+
+#### Assignment Completed
