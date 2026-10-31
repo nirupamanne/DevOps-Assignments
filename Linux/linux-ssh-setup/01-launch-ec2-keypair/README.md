@@ -28,7 +28,7 @@ Security Group name: linux-ssh-sg, Inbound type: SSH, Protocol: TCP, Port: 22, S
 
 ### Import the key and Launch the EC2 Instance
 *Step-4:* Launch the EC2 instance and choose Name: Linux ,AMI: Amazon Linux 2023 AMI, Instance type: t3.micro, and select keypair: linux-ssh-key, security existing group: select the group(linux-ssh-sg) -> Click on Launch instance.
-[Linux Assignments.docx](./Linux%20Assignments.docx)
+![Instance running in ap-south-2](Instance%20running%20in%20ap-south-2.png)
 
 
 ### What is the difference?
