@@ -54,9 +54,13 @@ whoami
 
 **3.	Your Security Group currently allows SSH from anywhere. Restrict it to your own IP only.**
 Go to EC2 → Instances, ->Click the linked Security Group name.Open Inbound rules → Edit inbound rules. Find the SSH rule on port 22. ->Change its source from Anywhere-IPv4 (0.0.0.0/0) to My IP-> Click Save rules.
+![Security Group](Linux%20Security%20group.png)
 
 **4.	Find out which Linux distribution and version is running on the instance.**
+
 Connect to your EC2 instance using SSH.
+![Linux Distribution](Linux%20distrubtion.png)
+
 cat /etc/os-release
 This displays the Linux kernel version
 This displays the distribution's release information: cat /etc/system-release
@@ -64,7 +68,8 @@ uname -r
 
 
 **5.	Delete the EC2 instance, Security Group, and key pair**
-Terminate the EC2 instance and delete the security group and key-par.
 
+Terminate the EC2 instance and delete the security group and key-par.
+![Instance Termination](Instance%20termination.png)
 
 ## Nirupa Manne
