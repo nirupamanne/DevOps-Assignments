@@ -8,7 +8,7 @@
 
 **1. Launch an Amazon Linux 2023 EC2 instance in HYD region. Generate an SSH key pair. What is the difference between the two files created?**
 
-### Enable the Hyderabad region 
+#### Enable the Hyderabad region 
 *Step 1:* Open AWS Console
 1. Open AWS Management Console.
 2. Log in to your AWS account.
@@ -19,7 +19,7 @@
 7. Click Launch instance.
 ![Instance running in ap-south-2](Instance.png)
 
-### Generate the key pair (on my laptop)
+#### Generate the key pair (on my laptop)
 *Step-2:*
 1. Click Create new key pair.
 2. Key pair name: linux-assignment-key
@@ -41,6 +41,7 @@ Security Group name: linux-ssh-sg, Inbound type: SSH, Protocol: TCP, Port: 22, S
 - **Public key**: Installed on the EC2 instance. SSH uses it to verify that you have the matching private key.
 
 **2.	Connect to your EC2 instance using SSH. Confirm you are connected by checking the hostname, current directory, and logged-in username.**
+
 Open EC2 → Instances, Select linux Copy its Public IPv4 address.
 Open Git Bash and navigate to the folder where the .pem file was downloaded. Then connect the ec2-instance.
 ssh -i linux-ssh-key.pem ec2-user@YOUR_PUBLIC_IP
@@ -60,6 +61,8 @@ cat /etc/os-release
 This displays the Linux kernel version
 This displays the distribution's release information: cat /etc/system-release
 uname -r
+
+
 **5.	Delete the EC2 instance, Security Group, and key pair**
 Terminate the EC2 instance and delete the security group and key-par.
 
