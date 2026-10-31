@@ -27,14 +27,13 @@ Security Group name: linux-ssh-sg, Inbound type: SSH, Protocol: TCP, Port: 22, S
 ![Linux Security Group](Linux%20Security%20group.png)
 
 ### Import the key and launch the instance
-*Step-4:*Launch the EC2 instance and choose Name: Linux ,AMI: Amazon Linux 2023 AMI, Instance type: t3.micro, and select keypair: linux-ssh-key, security existing group: select the group(linux-ssh-sg) -> Click on Launch instance.
+*Step-4:* Launch the EC2 instance and choose Name: Linux ,AMI: Amazon Linux 2023 AMI, Instance type: t3.micro, and select keypair: linux-ssh-key, security existing group: select the group(linux-ssh-sg) -> Click on Launch instance.
+[Click here to download Linux Assignments.docx](Linux%20Assignments.docx)
 
 
-
-## What is the difference?
+### What is the difference?
 - **Private key**: Used by you to prove your identity when connecting to the EC2 instance. Never share it.
 - **Public key**: Installed on the EC2 instance. SSH uses it to verify that you have the matching private key.
-
 
 
 ## Nirupa Manne
