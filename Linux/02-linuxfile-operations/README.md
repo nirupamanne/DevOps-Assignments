@@ -146,7 +146,6 @@ Verify the copied file contents:
 cat backup.txt
 ```
 
-**Step 3 completed.**
 
 ## Step 4: Move backup.txt to /tmp/
 
@@ -161,6 +160,7 @@ Execute:
 ```bash
 mv backup.txt /tmp/
 ```
+![Copy and Move](copy%20and%20move.png)
 
 **Explanation:**
 
@@ -221,6 +221,7 @@ rm -r devops/
 - `-r` – Recursively deletes directories and their contents.
 - `devops/` – Directory to delete.
 ![DevOps](devops.png)
+
 Verify:
 
 ```bash
