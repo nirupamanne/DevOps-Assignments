@@ -54,7 +54,6 @@ uid=1001(alice) gid=1001(alice) groups=1001(alice)
 ```
 ![Create User](<create user.png>)
 
-![Alice 2](<alice 2.png>)
 
 **Answer:**
 
@@ -95,6 +94,7 @@ sudo sshd -t
 ```
 
 If there is no output, the configuration syntax is valid.
+
 ![Alice 2](<alice 2.png>)
 
 **4. Restart the SSH service**
@@ -108,7 +108,6 @@ Check the service:
 ```bash
 sudo systemctl status sshd
 ```
-![Bob DevOps Team](<bob devops team-4.png>)
 
 **5. Connect as alice**
 
@@ -119,7 +118,7 @@ ssh alice@YOUR_EC2_PUBLIC_IP
 ```
 
 Enter alice's password when prompted.
-![Create User](<create user.png>)
+![Connect to Alice](<connect to alice.png>)
 
 **Important:**
 - Keep your existing EC2 SSH session open while testing.
@@ -201,6 +200,8 @@ bob : bob devops-team
 ```
 
 Both users should have `devops-team` as a secondary group.
+
+![Bob DevOps Team](<bob devops team-4.png>)
 
 ### Step 5: Give alice sudo access and verify
 
@@ -290,6 +291,7 @@ Alice should receive a message saying she is not allowed to run sudo commands.
 - Removing alice from `wheel` removes the sudo access granted through that group.
 
 **Note:** This assumes alice has no other sudo permissions through another group or sudoers rule.
+
 ![Remove Alice Sudo](<remove alice sudo-6.png>)
 
 ### Step 7: Allow only devops-team to run useradd and usermod
