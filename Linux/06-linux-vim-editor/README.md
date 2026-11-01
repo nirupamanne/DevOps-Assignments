@@ -99,6 +99,7 @@ vim practice.txt
 - `7G` – Moves the cursor to line 7.
 - `:3d` – Deletes line 3.
 - `:wq` – Saves and exits Vim.
+  
 ![Third Line Is Deleted](<third line is deleted.png>)
 
 ### Step 3: Search for a word, move through occurrences, and clear the highlight
@@ -134,6 +135,7 @@ vim practice.txt
 - `N` – Moves to the previous matching occurrence.
 - `:nohlsearch` – Clears the search highlighting.
 
+![Vim Linux 3](<vim Linux3.png>)
 
 ### Step 4: Replace every occurrence of one word with another in one command
 
@@ -277,6 +279,7 @@ yy
 - `5p` – Pastes 5 copies of the line.
 
 **Answer:** `yy5p` is the combined command to copy the current line and paste five copies below it.
+
 ![Paste 5 Times](<paste 5times.png>)
 
 ---
